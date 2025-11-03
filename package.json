@@ -1,24 +1,26 @@
 {
-  "name": "tele2googlesheets",
+  "name": "telegram-bill-bot",
   "version": "1.0.0",
-  "description": "Telegram to Google Sheets",
-  "main": "index.js",
-  "type": "module",
+  "description": "Telegram bot to track bills in Google Sheets",
+  "main": "bot.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bot.js",
+    "dev": "nodemon bot.js"
   },
   "keywords": [
     "telegram",
-    "google",
-    "sheets",
     "bot",
-    "webhook"
+    "google-sheets",
+    "bill-tracker"
   ],
-  "author": "JUNO_OKYO",
+  "author": "",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "dotenv": "^16.3.1",
-    "node-fetch": "^3.3.2",
-    "node-telegram-bot-api": "^0.66.0"
+    "googleapis": "^128.0.0",
+    "node-telegram-bot-api": "^0.64.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
