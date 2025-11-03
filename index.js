@@ -144,13 +144,13 @@ bot.onText(/\/a (.+)/, async (msg, match) => {
 
   } catch (error) {
     console.error('Error processing bill:', error);
-    
+
     let errorMessage = '❌ Error adding bill. ';
-    
+
     if (error.message.includes('permission') || error.code === 403) {
       errorMessage += 'Permission denied to access Google Sheet.\n\n';
       errorMessage += '⚠️ Please share the spreadsheet with the service account email.\n';
-      
+
       try {
         const creds = JSON.parse(process.env.GOOGLE_CREDENTIALS);
         errorMessage += `\n📧 Service Account: ${creds.client_email}\n`;
@@ -163,7 +163,7 @@ bot.onText(/\/a (.+)/, async (msg, match) => {
     } else {
       errorMessage += 'Please try again later.';
     }
-    
+
     bot.sendMessage(chatId, errorMessage);
   }
 });
